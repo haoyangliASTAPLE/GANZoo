@@ -1,6 +1,6 @@
 # GANZoo
  
-#### Environment Setup
+### Environment Setup
 Install Python 3.X and Pytorch according to your CUDA version
 Pip install `ema-pytorch~=0.2.3` and `tqdm`
 

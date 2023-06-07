@@ -52,8 +52,15 @@ def main(args):
         normalize = transforms.Normalize(mean, std)
 
         # load MNIST dataset, we use training set as the auxiliary dataset
-        train = datasets.MNIST(train=True, transform=transforms.Compose([transforms.ToTensor, normalize]))
-        loader = DataLoader(train, batch_size=args.batch_size, shuffle=True)
+        train = datasets.MNIST(root='./.data/mnist/',
+                               train=True,
+                               download=True,
+                               transform=transforms.Compose([transforms.ToTensor, normalize]))
+        loader = DataLoader(train,
+                            batch_size=args.batch_size,
+                            shuffle=True,
+                            num_workers=args.num_workers,
+                            pin_memory=args.pin_memory)
 
         # dataset characteristics
         channel = 1

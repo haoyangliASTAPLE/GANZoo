@@ -1,0 +1,4 @@
+.data/
+.saved_figs/
+.saved_models/
+__pycache__
